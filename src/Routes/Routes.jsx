@@ -22,6 +22,10 @@ import Payment from '../Pages/Dashboard/Payment/Payment';
 import PaymentHistrory from '../Pages/Dashboard/PaymentHistrory/PaymentHistrory';
 import UserHome from '../Pages/Dashboard/UserHome/UserHome';
 import AdminHome from '../Pages/Dashboard/Admin/AdminHome/AdminHome';
+import Invoice from '../Pages/Dashboard/Invoice/Invoice';
+import EmployeeDetails from '../Pages/Dashboard/Admin/EmployeeDetails/EmployeeDetails';
+import AddEmployee from '../Pages/Dashboard/Admin/AddEmployee/AddEmployee';
+import UpdateEmpDetails from '../Pages/Dashboard/Admin/UpdateEmployeeDetails/UpdateEmpDetails';
 
 export const router = createBrowserRouter([
   {
@@ -32,10 +36,7 @@ export const router = createBrowserRouter([
         path: "/",
         element: <Home></Home>
       },
-      {
-        path: '/userHome',
-        element: <UserHome></UserHome>
-      },
+
       {
         path: '/menu',
         element: <PrivateRoute><Menu></Menu></PrivateRoute>
@@ -73,7 +74,10 @@ export const router = createBrowserRouter([
         path: 'cart',
         element: <Cart></Cart>
       },
-
+      {
+        path: 'userHome',
+        element: <UserHome></UserHome>
+      },
       {
         path: 'payment',
         element: <Payment></Payment>
@@ -104,8 +108,26 @@ export const router = createBrowserRouter([
       {
         path: 'updateItem/:id',
         element: <AdminRoute><UpdateItem></UpdateItem></AdminRoute>,
-        loader: ({ params }) => fetch(`https://restaurant-management-system-server-nine.vercel.app/menu/${params.id}`)
-      }
+        loader: ({ params }) => fetch(`http://localhost:5000/menu/${params.id}`)
+      },
+      {
+        path: 'employeeDetails',
+        element: <AdminRoute><EmployeeDetails></EmployeeDetails></AdminRoute>
+      },
+      {
+        path: 'updateDetail/:id',
+        element:<UpdateEmpDetails></UpdateEmpDetails>,
+        loader:({params})=> fetch(`http://localhost:5000/addEmployee/${params.id}`)
+      },
+      {
+        path: 'addEmployee',
+        element: <AdminRoute><AddEmployee></AddEmployee></AdminRoute>
+      },
     ]
+  },
+  {
+    path: "/invoice",
+    element: <Invoice></Invoice>
   }
+
 ]);

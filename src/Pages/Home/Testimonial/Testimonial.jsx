@@ -19,7 +19,7 @@ const Testimonial = () => {
     // const { name, details, rating } = reviews
 
     useEffect(() => {
-        fetch('https://restaurant-management-system-server-nine.vercel.app/reviews')
+        fetch('http://localhost:5000/reviews')
             .then(res => res.json())
             .then(data => {
                 setReviews(data)

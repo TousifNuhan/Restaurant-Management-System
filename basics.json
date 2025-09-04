@@ -1,0 +1,53 @@
+First iteration
+id = "642c155b2c4774f05c36eeaa"
+
+acc[
+    "642c155b2c4774f05c36eeaa"
+] is undefined
+
+(undefined || 0) becomes 0
+
+Add 1 → store 1 in that key
+acc = {
+    "642c155b2c4774f05c36eeaa": 1
+}
+
+Second iteration
+id = "642c155b2c4774f05c36eeaa" again
+
+acc[
+    "642c155b2c4774f05c36eeaa"
+] is 1 now
+
+(1 || 0) → 1
+
+Add 1 → store 2 in that key
+acc = {
+    "642c155b2c4774f05c36eeaa": 2
+}
+
+
+Third iteration
+id = "64abcde1234567890abcdef0"
+
+acc[
+    "64abcde1234567890abcdef0"
+] is undefined
+
+(undefined || 0) → 0
+
+Add 1 → store 1 in that key
+acc = {
+    "642c155b2c4774f05c36eeaa": 2,
+    "64abcde1234567890abcdef0": 1
+}
+
+
+
+Example:
+
+menuItemIDs = ["a", "b", "a"];
+// Step by step reduce:
+1st iteration: acc = {}, id = "a" → acc["a"] = 0 + 1 → acc = { a: 1 }
+2nd iteration: acc = { a: 1 }, id = "b" → acc["b"] = 0 + 1 → acc = { a: 1, b: 1 }
+3rd iteration: acc = { a: 1, b: 1 }, id = "a" → acc["a"] = 1 + 1 → acc = { a: 2, b: 1 }

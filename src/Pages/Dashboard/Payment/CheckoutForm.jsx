@@ -4,12 +4,14 @@ import useAxiosSecure from '../../../hooks/useAxiosSecure';
 import UseCart from '../../../hooks/UseCart';
 import UseAuth from '../../../hooks/UseAuth';
 import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
 
 const CheckoutForm = () => {
 
     const [error, setError] = useState('')
     const [clientSecret, setClientSecret] = useState('')
     const [transactionID, setTransactionID] = useState('')
+    const [invoice, setInvoice] = useState(false)
     const { user } = UseAuth()
 
     const stripe = useStripe()
@@ -77,6 +79,7 @@ const CheckoutForm = () => {
                 // now save the payment in the db
 
                 const payment = {
+                    name:user?.displayName,
                     email: user?.email,
                     price: totalPrice,
                     transactionID: paymentIntent.id,
@@ -87,8 +90,9 @@ const CheckoutForm = () => {
                 }
 
                 const res = await axiosSecure.post('/payments', payment)
-                console.log(res.data)
+                console.log(res)
                 if (res.data?.result?.insertedId) {
+                    setInvoice(true)
                     refetch()
                     Swal.fire({
                         position: "top-end",
@@ -101,8 +105,6 @@ const CheckoutForm = () => {
 
             }
         }
-
-
     }
 
     return (
@@ -124,9 +126,21 @@ const CheckoutForm = () => {
                     },
                 }}
             />
-            <button className='btn btn-primary mt-5' type="submit" disabled={!stripe || !clientSecret}>
+            <button className='btn btn-outline btn-primary mt-5' type="submit"
+                disabled={!stripe || !clientSecret}
+            >
                 Pay
             </button>
+            <Link
+            state={{ transactionIDs:transactionID }}
+             to="/invoice">
+                <button
+                className='btn btn-outline btn-secondary mt-5 ml-3' type="submit"
+                    disabled={!invoice}
+                >
+                    Get Invoice
+                </button>
+            </Link>
             <p className='text-red-600 mt-1'>{error}</p>
             {/* {
                 transactionID && <p className='text-green-500'>{transactionID}</p>

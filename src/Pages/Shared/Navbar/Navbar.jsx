@@ -31,12 +31,12 @@ const Navbar = () => {
                 user && isAdmin && <li><NavLink to='/dashboard/adminHome'>Dashboard</NavLink></li>
             }
             {
-                user && !isAdmin && <li><NavLink to='/userHome'>Dashboard</NavLink></li>
+                user && !isAdmin && <li><NavLink to='/dashboard/userHome'>Dashboard</NavLink></li>
             }
-            <li><NavLink  to='/dashboard/cart'>
+            {/* <li><NavLink  to='/dashboard/cart'>
                 <IoCart className="h-6 w-4"/>
                 <div className="badge badge-sm badge-secondary">+{cart.length}</div>
-            </NavLink></li>
+            </NavLink></li> */}
         </>
 
     const navLinks2 =

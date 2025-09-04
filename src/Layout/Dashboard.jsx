@@ -7,6 +7,10 @@ import { NavLink, Outlet } from 'react-router-dom';
 import UseCart from '../hooks/UseCart';
 import UseAdmin from '../hooks/UseAdmin';
 import { FaFileInvoice } from "react-icons/fa";
+import { IoIosPeople } from "react-icons/io";
+import { MdPersonAddAlt1 } from "react-icons/md";
+
+
 
 const Dashboard = () => {
     const [cart] = UseCart()
@@ -31,6 +35,12 @@ const Dashboard = () => {
                                     <li>
                                         <NavLink to='/dashboard/manageItems' className="flex items-center py-2 hover:text-white"> <FaList className='mr-2'></FaList>Manage Items</NavLink>
                                     </li>
+                                     <li>
+                                        <NavLink to='/dashboard/addEmployee' className="flex items-center py-2 hover:text-white"> <MdPersonAddAlt1 className='mr-1 h-8 w-5'></MdPersonAddAlt1>Add Employee</NavLink>
+                                    </li>
+                                    <li>
+                                        <NavLink to='/dashboard/employeeDetails' className="flex items-center py-2 hover:text-white"><IoIosPeople className='mr-1 h-8 w-5'></IoIosPeople>Manage Employee</NavLink>
+                                    </li>
                                     <li>
                                         <NavLink to='/dashboard/manageBookings' className="flex items-center py-2 hover:text-white"> <FaBook className='mr-2'></FaBook>Manage Bookings</NavLink>
                                     </li>
@@ -41,7 +51,7 @@ const Dashboard = () => {
                                 :
                                 <>
                                     <li>
-                                        <NavLink to='/userHome' className="flex items-center py-2 hover:text-white"> <FaHome className='mr-2'></FaHome> User Home</NavLink>
+                                        <NavLink to='/dashboard/userHome' className="flex items-center py-2 hover:text-white"> <FaHome className='mr-2'></FaHome> User Home</NavLink>
                                     </li>
                                     <li>
                                         <NavLink to='/dashboard/cart' className="flex items-center py-2 hover:text-white"> <HiShoppingCart className='mr-2'></HiShoppingCart> My Cart ({cart.length}) </NavLink>
@@ -58,9 +68,9 @@ const Dashboard = () => {
                                     <li>
                                         <NavLink to='/dashboard/bookings' className="flex items-center py-2 hover:text-white"> <FaList className='mr-2 w-4 h-4'></FaList> My Bookings</NavLink>
                                     </li>
-                                    <li>
-                                        <NavLink to='/dashboard/invoice' className="flex items-center py-2 hover:text-white"> <FaFileInvoice className='mr-2 w-4 h-4'></FaFileInvoice> Invoice</NavLink>
-                                    </li>
+                                    {/* <li>
+                                        <NavLink to='/dashboard/Invoice' className="flex items-center py-2 hover:text-white"> <FaFileInvoice className='mr-2 w-4 h-4'></FaFileInvoice> Invoice</NavLink>
+                                    </li> */}
                                 </>
                         }
 
@@ -73,7 +83,7 @@ const Dashboard = () => {
                             <NavLink to='/menu' className="flex items-center py-2 hover:text-white"> <FaSearch className='mr-2 h-4 w-4'></FaSearch>Menu</NavLink>
                         </li>
                         <li>
-                            <NavLink to='/menu' className="flex items-center py-2 hover:text-white"> <FaBasketShopping className='mr-2 h-4 w-4'></FaBasketShopping>Shop</NavLink>
+                            <NavLink to='/order' className="flex items-center py-2 hover:text-white"> <FaBasketShopping className='mr-2 h-4 w-4'></FaBasketShopping>Shop</NavLink>
                         </li>
                         <li>
                             <NavLink to='/contact' className="flex items-center py-2 hover:text-white"> <FaEnvelope className='mr-2'></FaEnvelope>Contact</NavLink>

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import SelectedTitle from '../../Shared/SelectedTitle/SelectedTitle';
 import { useQuery } from '@tanstack/react-query';
 import UseAuth from '../../../hooks/UseAuth';
@@ -7,6 +7,7 @@ import useAxiosSecure from '../../../hooks/useAxiosSecure';
 const PaymentHistrory = () => {
     const { user } = UseAuth()
     const axiosSecure = useAxiosSecure()
+    console.log(user?.email)
 
     const { data: payments = [] } = useQuery({
         queryKey: ['paymentHistory', user?.email],
