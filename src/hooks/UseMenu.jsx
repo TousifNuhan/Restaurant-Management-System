@@ -6,7 +6,7 @@ const UseMenu = () => {
     const axiosPublic = UseAxiosPublic()
 
     // useEffect(() => {
-    //     fetch('http://localhost:5000/menu')
+    //     fetch('https://restaurant-management-system-server-nine.vercel.app/menu')
     //         .then(res => res.json())
     //         .then(data => {
     //             // const datas = data.filter(item => item.category === 'popular')

@@ -31,12 +31,12 @@ const Navbar = () => {
                 user && isAdmin && <li><NavLink to='/dashboard/adminHome'>Dashboard</NavLink></li>
             }
             {
-                user && !isAdmin && <li><NavLink to='/dashboard/userHome'>Dashboard</NavLink></li>
+                user && !isAdmin && <li><NavLink to='/dashboard/cart'>Dashboard</NavLink></li>
             }
-            {/* <li><NavLink  to='/dashboard/cart'>
-                <IoCart className="h-6 w-4"/>
-                <div className="badge badge-sm badge-secondary">+{cart.length}</div>
-            </NavLink></li> */}
+            {/* {
+                user && !isAdmin && <li><NavLink to='/dashboard/userHome'>Dashboard</NavLink></li>
+            } */}
+           
         </>
 
     const navLinks2 =
@@ -69,7 +69,7 @@ const Navbar = () => {
                     </div>
                     <div className='flex items-center justify-center '>
                         <img src={logo} className='h-7 ' alt="" />
-                        <a className="ml-1 font-semibold text-lg pt-2">DineSphere</a>
+                        <a className="ml-1 font-semibold text-lg pt-2">Central Park BD</a>
                     </div>
                 </div>
                 <div className="navbar-center hidden lg:flex">

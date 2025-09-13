@@ -33,7 +33,7 @@ const Menu = () => {
     return (
         <div>
             <Helmet>
-                <title>DineSphere Restaurant | Menu</title>
+                <title>Central Park BD | Menu</title>
             </Helmet>
             <div>
                 <Cover

@@ -99,7 +99,7 @@ export const router = createBrowserRouter([
       },
       {
         path: 'manageItems',
-        element: <ManageItem></ManageItem>
+        element: <AdminRoute><ManageItem></ManageItem></AdminRoute>
       },
       {
         path: 'addItems',
@@ -108,7 +108,7 @@ export const router = createBrowserRouter([
       {
         path: 'updateItem/:id',
         element: <AdminRoute><UpdateItem></UpdateItem></AdminRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/menu/${params.id}`)
+        loader: ({ params }) => fetch(`https://restaurant-management-system-server-nine.vercel.app/menu/${params.id}`)
       },
       {
         path: 'employeeDetails',
@@ -116,8 +116,8 @@ export const router = createBrowserRouter([
       },
       {
         path: 'updateDetail/:id',
-        element:<UpdateEmpDetails></UpdateEmpDetails>,
-        loader:({params})=> fetch(`http://localhost:5000/addEmployee/${params.id}`)
+        element:<AdminRoute><UpdateEmpDetails></UpdateEmpDetails></AdminRoute>,
+        loader:({params})=> fetch(`https://restaurant-management-system-server-nine.vercel.app/addEmployee/${params.id}`)
       },
       {
         path: 'addEmployee',

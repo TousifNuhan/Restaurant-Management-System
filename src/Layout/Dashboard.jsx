@@ -20,7 +20,7 @@ const Dashboard = () => {
         <div className='flex'>
             <div className='w-52 min-h-screen bg-[#D1A054]'>
                 <div className='ml-6 pt-3'>
-                    <p className=" font-semibold text-lg pt-1 font-serif ">DineSphere</p>
+                    <p className=" font-semibold text-lg pt-1 font-serif ">Central Park BD</p>
                     <p className=" font-semibold text-sm font-mono tracking-widest">Restaurant</p>
                     <ul className='mx-auto text-center font-medium w-full text-base mt-10'>
                         {
@@ -41,25 +41,25 @@ const Dashboard = () => {
                                     <li>
                                         <NavLink to='/dashboard/employeeDetails' className="flex items-center py-2 hover:text-white"><IoIosPeople className='mr-1 h-8 w-5'></IoIosPeople>Manage Employee</NavLink>
                                     </li>
-                                    <li>
+                                    {/* <li>
                                         <NavLink to='/dashboard/manageBookings' className="flex items-center py-2 hover:text-white"> <FaBook className='mr-2'></FaBook>Manage Bookings</NavLink>
-                                    </li>
+                                    </li> */}
                                     <li>
                                         <NavLink to='/dashboard/users' className="flex items-center py-2 hover:text-white"> <FaUsers className='mr-2 h-5 w-4'></FaUsers>All Users</NavLink>
                                     </li>
                                 </>
                                 :
                                 <>
-                                    <li>
+                                    {/* <li>
                                         <NavLink to='/dashboard/userHome' className="flex items-center py-2 hover:text-white"> <FaHome className='mr-2'></FaHome> User Home</NavLink>
-                                    </li>
+                                    </li> */}
                                     <li>
                                         <NavLink to='/dashboard/cart' className="flex items-center py-2 hover:text-white"> <HiShoppingCart className='mr-2'></HiShoppingCart> My Cart ({cart.length}) </NavLink>
                                     </li>
                                     <li>
                                         <NavLink to='/dashboard/paymentHistory' className="flex items-center py-2 hover:text-white"> <BsFillCreditCard2FrontFill className='mr-2'></BsFillCreditCard2FrontFill>Payment History</NavLink>
                                     </li>
-                                    <li>
+                                    {/* <li>
                                         <NavLink to='/dashboard/reservation' className="flex items-center py-2 hover:text-white"> <FaCalendar className='mr-2'></FaCalendar> Reservation</NavLink>
                                     </li>
                                     <li>
@@ -67,10 +67,8 @@ const Dashboard = () => {
                                     </li>
                                     <li>
                                         <NavLink to='/dashboard/bookings' className="flex items-center py-2 hover:text-white"> <FaList className='mr-2 w-4 h-4'></FaList> My Bookings</NavLink>
-                                    </li>
-                                    {/* <li>
-                                        <NavLink to='/dashboard/Invoice' className="flex items-center py-2 hover:text-white"> <FaFileInvoice className='mr-2 w-4 h-4'></FaFileInvoice> Invoice</NavLink>
                                     </li> */}
+                                    
                                 </>
                         }
 
@@ -85,9 +83,9 @@ const Dashboard = () => {
                         <li>
                             <NavLink to='/order' className="flex items-center py-2 hover:text-white"> <FaBasketShopping className='mr-2 h-4 w-4'></FaBasketShopping>Shop</NavLink>
                         </li>
-                        <li>
+                        {/* <li>
                             <NavLink to='/contact' className="flex items-center py-2 hover:text-white"> <FaEnvelope className='mr-2'></FaEnvelope>Contact</NavLink>
-                        </li>
+                        </li> */}
 
 
                     </ul>
