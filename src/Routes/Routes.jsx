@@ -26,6 +26,10 @@ import Invoice from '../Pages/Dashboard/Invoice/Invoice';
 import EmployeeDetails from '../Pages/Dashboard/Admin/EmployeeDetails/EmployeeDetails';
 import AddEmployee from '../Pages/Dashboard/Admin/AddEmployee/AddEmployee';
 import UpdateEmpDetails from '../Pages/Dashboard/Admin/UpdateEmployeeDetails/UpdateEmpDetails';
+import SupplierRoute from './SupplierRoute';
+import SupplierHome from '../Pages/Dashboard/Supplier/SupplierHome';
+import AddSupply from '../Pages/Dashboard/Supplier/addSupply';
+import SupplyDetails from '../Pages/Dashboard/Supplier/SupplyDetails';
 
 export const router = createBrowserRouter([
   {
@@ -122,6 +126,20 @@ export const router = createBrowserRouter([
       {
         path: 'addEmployee',
         element: <AdminRoute><AddEmployee></AddEmployee></AdminRoute>
+      },
+      // suppliers route
+
+      {
+        path:'supplierHome',
+        element:<AdminRoute><SupplierRoute><SupplierHome></SupplierHome></SupplierRoute></AdminRoute>
+      },
+      {
+        path:'addSupply',
+        element:<AdminRoute><SupplierRoute><AddSupply></AddSupply></SupplierRoute></AdminRoute>
+      },
+      {
+        path:'supplyDetails',
+        element:<AdminRoute><SupplierRoute><SupplyDetails></SupplyDetails></SupplierRoute></AdminRoute>
       },
     ]
   },

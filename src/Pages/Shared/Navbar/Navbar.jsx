@@ -5,12 +5,14 @@ import UseAuth from '../../../hooks/UseAuth';
 import { IoCart } from "react-icons/io5";
 import UseCart from '../../../hooks/UseCart';
 import UseAdmin from '../../../hooks/UseAdmin';
+import UseSupplier from '../../../hooks/UseSupplier';
 
 const Navbar = () => {
 
     const { user, logOut } = UseAuth()
-    const [isAdmin]=UseAdmin()
-    const [cart]=UseCart()
+    const [isAdmin] = UseAdmin()
+    const [isSupplier]=UseSupplier()
+    const [cart] = UseCart()
 
     const handleLogOut = () => {
         logOut()
@@ -18,7 +20,7 @@ const Navbar = () => {
                 // console.log(result.user)
             })
             .catch(error => {
-                console.error(error)
+                // console.error(error)
             })
     }
 
@@ -31,12 +33,12 @@ const Navbar = () => {
                 user && isAdmin && <li><NavLink to='/dashboard/adminHome'>Dashboard</NavLink></li>
             }
             {
-                user && !isAdmin && <li><NavLink to='/dashboard/cart'>Dashboard</NavLink></li>
+                user && !isAdmin &&!isSupplier && <li><NavLink to='/dashboard/cart'>Dashboard</NavLink></li>
             }
-            {/* {
-                user && !isAdmin && <li><NavLink to='/dashboard/userHome'>Dashboard</NavLink></li>
-            } */}
-           
+            {
+                user && isSupplier && <li><NavLink to='/dashboard/supplierHome'>Dashboard</NavLink></li>
+            }
+
         </>
 
     const navLinks2 =

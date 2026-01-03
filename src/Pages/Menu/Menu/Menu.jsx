@@ -24,9 +24,9 @@ const Menu = () => {
 
     const [menu]=UseMenu()
     const offers= menu.filter(item=> item.category ==='offered')
-    console.log(offers)
+    // console.log(offers)
     const desserts= menu.filter(item=> item.category ==='dessert')
-    console.log(desserts)
+    // console.log(desserts)
     const salads= menu.filter(item=> item.category ==='salad')
     const pizzas= menu.filter(item=> item.category ==='pizza')
 

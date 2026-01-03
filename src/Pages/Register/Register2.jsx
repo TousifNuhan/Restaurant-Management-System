@@ -20,13 +20,13 @@ const Register2 = () => {
     } = useForm()
 
     const onSubmit = (data) => {
-        console.log(data)
+        // console.log(data)
         createUser(data.email, data.password)
             .then(result => {
-                console.log(result.user)
+                // console.log(result.user)
                 updateUserProfile(data.name, data.PhotoURL)
                     .then(() => {
-                        console.log('updated')
+                        // console.log('updated')
 
                         const userInfo = {
                             name: data.name,
@@ -48,20 +48,20 @@ const Register2 = () => {
 
                         logOut()
                             .then(result => {
-                                console.log(result)
+                                // console.log(result)
                                 navigate('/login')
                             })
                             .catch(error => {
-                                console.error(error)
+                                // console.error(error)
                             })
 
                     })
                     .catch(error => {
-                        console.error(error)
+                        // console.error(error)
                     })
             })
             .catch(error => {
-                console.error(error)
+                // console.error(error)
             })
     }
     return (

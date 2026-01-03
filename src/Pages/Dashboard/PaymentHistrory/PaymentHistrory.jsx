@@ -7,7 +7,7 @@ import useAxiosSecure from '../../../hooks/useAxiosSecure';
 const PaymentHistrory = () => {
     const { user } = UseAuth()
     const axiosSecure = useAxiosSecure()
-    console.log(user?.email)
+    // console.log(user?.email)
 
     const { data: payments = [] } = useQuery({
         queryKey: ['paymentHistory', user?.email],
@@ -48,7 +48,6 @@ const PaymentHistrory = () => {
                                     <td>{item.status}</td>
                                 </tr>)
                             }
-
 
                         </tbody>
                     </table>

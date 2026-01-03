@@ -3,7 +3,7 @@ import MenuItem from '../../Shared/menuItem/menuItem';
 import { Link } from 'react-router-dom';
 
 const MenuCategory = ({ items,title }) => {
-    console.log(items)
+    // console.log(items)z
     return (
         <div >
             <div className='grid grid-cols-2 gap-10 w-4/5 mx-auto mb-12'>

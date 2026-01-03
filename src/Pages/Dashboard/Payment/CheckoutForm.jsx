@@ -23,7 +23,7 @@ const CheckoutForm = () => {
     useEffect(() => {
         axiosSecure.post('/create-payment-intent', { price: totalPrice })
             .then(res => {
-                console.log(res.data.client_secret)
+                // console.log(res.data.client_secret)
                 setClientSecret(res.data.client_secret)
             })
     }, [])
@@ -45,11 +45,11 @@ const CheckoutForm = () => {
             card
         })
         if (error) {
-            console.log(error)
+            // console.log(error)
             setError(error.message)
         }
         if (paymentMethod) {
-            console.log(paymentMethod)
+            // console.log(paymentMethod)
             setError('')
         }
 
@@ -72,7 +72,7 @@ const CheckoutForm = () => {
             console.log(Error)
         }
         else {
-            console.log(paymentIntent)
+            // console.log(paymentIntent)
             if (paymentIntent.status === "succeeded") {
                 setTransactionID(paymentIntent.id)
 
@@ -90,7 +90,7 @@ const CheckoutForm = () => {
                 }
 
                 const res = await axiosSecure.post('/payments', payment)
-                console.log(res)
+                // console.log(res)
                 if (res.data?.result?.insertedId) {
                     setInvoice(true)
                     refetch()

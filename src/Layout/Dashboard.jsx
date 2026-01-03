@@ -9,13 +9,15 @@ import UseAdmin from '../hooks/UseAdmin';
 import { FaFileInvoice } from "react-icons/fa";
 import { IoIosPeople } from "react-icons/io";
 import { MdPersonAddAlt1 } from "react-icons/md";
+import UseSupplier from '../hooks/UseSupplier';
 
 
 
 const Dashboard = () => {
     const [cart] = UseCart()
     const [isAdmin] = UseAdmin()
-    
+    const [isSupplier] = UseSupplier()
+
     return (
         <div className='flex'>
             <div className='w-52 min-h-screen bg-[#D1A054]'>
@@ -35,7 +37,7 @@ const Dashboard = () => {
                                     <li>
                                         <NavLink to='/dashboard/manageItems' className="flex items-center py-2 hover:text-white"> <FaList className='mr-2'></FaList>Manage Items</NavLink>
                                     </li>
-                                     <li>
+                                    <li>
                                         <NavLink to='/dashboard/addEmployee' className="flex items-center py-2 hover:text-white"> <MdPersonAddAlt1 className='mr-1 h-8 w-5'></MdPersonAddAlt1>Add Employee</NavLink>
                                     </li>
                                     <li>
@@ -49,17 +51,30 @@ const Dashboard = () => {
                                     </li>
                                 </>
                                 :
-                                <>
-                                    {/* <li>
+                                isSupplier ?
+                                    <>
+                                        <li>
+                                            <NavLink to='/dashboard/supplierHome' className="flex items-center py-2 hover:text-white"> <FaHome className='mr-2'></FaHome>Supplier Home </NavLink>
+                                        </li>
+                                        <li>
+                                            <NavLink to='/dashboard/addSupply' className="flex items-center py-2 hover:text-white"> <FaHome className='mr-2'></FaHome>Add Supply</NavLink>
+                                        </li>
+                                        <li>
+                                            <NavLink to='/dashboard/supplyDetails' className="flex items-center py-2 hover:text-white"> <FaHome className='mr-2'></FaHome>Supply Details</NavLink>
+                                        </li>
+                                    </>
+                                    :
+                                    <>
+                                        {/* <li>
                                         <NavLink to='/dashboard/userHome' className="flex items-center py-2 hover:text-white"> <FaHome className='mr-2'></FaHome> User Home</NavLink>
                                     </li> */}
-                                    <li>
-                                        <NavLink to='/dashboard/cart' className="flex items-center py-2 hover:text-white"> <HiShoppingCart className='mr-2'></HiShoppingCart> My Cart ({cart.length}) </NavLink>
-                                    </li>
-                                    <li>
-                                        <NavLink to='/dashboard/paymentHistory' className="flex items-center py-2 hover:text-white"> <BsFillCreditCard2FrontFill className='mr-2'></BsFillCreditCard2FrontFill>Payment History</NavLink>
-                                    </li>
-                                    {/* <li>
+                                        <li>
+                                            <NavLink to='/dashboard/cart' className="flex items-center py-2 hover:text-white"> <HiShoppingCart className='mr-2'></HiShoppingCart> My Cart ({cart.length}) </NavLink>
+                                        </li>
+                                        <li>
+                                            <NavLink to='/dashboard/paymentHistory' className="flex items-center py-2 hover:text-white"> <BsFillCreditCard2FrontFill className='mr-2'></BsFillCreditCard2FrontFill>Payment History</NavLink>
+                                        </li>
+                                        {/* <li>
                                         <NavLink to='/dashboard/reservation' className="flex items-center py-2 hover:text-white"> <FaCalendar className='mr-2'></FaCalendar> Reservation</NavLink>
                                     </li>
                                     <li>
@@ -68,8 +83,8 @@ const Dashboard = () => {
                                     <li>
                                         <NavLink to='/dashboard/bookings' className="flex items-center py-2 hover:text-white"> <FaList className='mr-2 w-4 h-4'></FaList> My Bookings</NavLink>
                                     </li> */}
-                                    
-                                </>
+
+                                    </>
                         }
 
                         <hr className='w-11/12 text-white border my-5' />

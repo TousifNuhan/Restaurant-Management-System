@@ -52,11 +52,11 @@ const Login = () => {
 
         // form.reset()
 
-        console.log(email, password)
+        // console.log(email, password)
 
         logInUser(email, password)
             .then(result => {
-                console.log(result.user)
+                // console.log(result.user)
                 Swal.fire({
                     title: "Successfully Looged In !",
                     icon: "success",
@@ -65,7 +65,7 @@ const Login = () => {
                 navigate(from, { replace: true })
             })
             .catch(error => {
-                console.error(error)
+                // console.error(error)
             })
     }
 

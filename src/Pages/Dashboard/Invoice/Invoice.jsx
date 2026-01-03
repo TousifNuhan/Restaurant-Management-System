@@ -15,7 +15,7 @@ const Invoice = () => {
     const { user } = UseAuth()
 
     const { transactionIDs } = location?.state || {}
-    console.log(transactionIDs)
+    // console.log(transactionIDs)
     const axiosSecure = useAxiosSecure()
 
     const { data: invoice = {}, isLoading } = useQuery({
@@ -27,7 +27,7 @@ const Invoice = () => {
         },
     });
 
-    console.log(invoice)
+    // console.log(invoice)
     const { name, email, price, date, cardIDs, menuItemIDs } = invoice
 
     const { data: invoiceDetails = [] } = useQuery({
@@ -39,7 +39,7 @@ const Invoice = () => {
         }
     })
 
-    console.log(invoiceDetails)
+    // console.log(invoiceDetails)
     const dates = new Date().toLocaleDateString()
 
     const quantityMap = (menuItemIDs || []).reduce((acc, id) => {

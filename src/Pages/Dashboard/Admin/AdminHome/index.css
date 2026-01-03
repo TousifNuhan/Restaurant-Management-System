@@ -1,0 +1,21 @@
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  #print-dashboard,
+  #print-dashboard * {
+    visibility: visible;
+  }
+
+  #print-dashboard {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+
+  .print\:hidden {
+    display: none;
+  }
+}

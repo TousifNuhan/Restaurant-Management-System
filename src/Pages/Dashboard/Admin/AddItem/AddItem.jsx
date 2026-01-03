@@ -17,14 +17,14 @@ const AddItem = () => {
     const { register, handleSubmit, reset } = useForm()
 
     const onSubmit = async (data) => {
-        console.log(data)
+        // console.log(data)
         const imageFile = { image: data.image[0] }
         const res = await axiosPublic.post(hosting_api, imageFile, {
             headers: {
                 'content-type': 'multipart/form-data'
             },
         })
-        console.log(res.data)
+        // console.log(res.data)
 
         if (res.data.success) {
             const menuItems = {
@@ -36,7 +36,7 @@ const AddItem = () => {
             }
 
             const res2 = await axiosSecure.post('/menu', menuItems)
-            console.log(res2.data.acknowledged)
+            // console.log(res2.data.acknowledged)
             if (res2.data.acknowledged) {
                 reset()
                 Swal.fire({

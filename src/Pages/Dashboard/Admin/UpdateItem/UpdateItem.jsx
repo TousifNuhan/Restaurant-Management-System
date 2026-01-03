@@ -15,7 +15,7 @@ const UpdateItem = () => {
     const [, refetch] = UseMenu()
 
     const { name, image, recipe, _id, price, category } = useLoaderData();
-    console.log(name)
+    // console.log(name)
 
     const axiosPublic = UseAxiosPublic()
     const axiosSecure = useAxiosSecure()
@@ -23,14 +23,14 @@ const UpdateItem = () => {
     const { register, handleSubmit, reset } = useForm()
 
     const onSubmit = async (data) => {
-        console.log(data)
+        // console.log(data)
         const imageFile = { image: data.image[0] }
         const res = await axiosPublic.post(hosting_api, imageFile, {
             headers: {
                 'content-type': 'multipart/form-data'
             },
         })
-        console.log(res.data)
+        // console.log(res.data)
 
         if (res.data.success) {
             const menuItems = {
@@ -42,7 +42,7 @@ const UpdateItem = () => {
             }
 
             const res2 = await axiosSecure.patch(`/menu/${_id}`, menuItems)
-            console.log(res2.data)
+            // console.log(res2.data)
             if (res2.data.modifiedCount > 0) {
                 refetch()
                 reset({

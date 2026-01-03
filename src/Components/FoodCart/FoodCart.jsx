@@ -4,6 +4,7 @@ import Swal from 'sweetalert2';
 import { useLocation, useNavigate } from 'react-router-dom';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
 import UseCart from '../../hooks/UseCart';
+import { FaBangladeshiTakaSign } from 'react-icons/fa6';
 
 const FoodCart = ({ items }) => {
     const { name, recipe, image, price, _id } = items
@@ -11,10 +12,10 @@ const FoodCart = ({ items }) => {
     const navigate = useNavigate()
     const location = useLocation()
     const axiosSecure = useAxiosSecure()
-    const [,refetch]=UseCart()
+    const [, refetch] = UseCart()
 
     const submitCard = (food) => {
-        console.log(food, _id)
+        // console.log(food, _id)
         if (user && user.email) {
             const foodCarts = {
                 menuID: food._id,
@@ -27,7 +28,7 @@ const FoodCart = ({ items }) => {
 
             axiosSecure.post("/carts", foodCarts)
                 .then(res => {
-                    console.log(res.data)
+                    // console.log(res.data)
                     if (res.data.acknowledged) {
                         Swal.fire({
                             position: "top-end",
@@ -73,7 +74,13 @@ const FoodCart = ({ items }) => {
                     </div>
                 </div>
                 <div className='absolute right-5 bg-[#111827] text-white px-5 mt-2'>
-                    <p>$ {price}</p>
+                    
+                    <div className="flex justify-center items-center ">
+                        <FaBangladeshiTakaSign className="h-3 w-3" />
+                        <p className="ml-1">{price}</p>
+                        {/* <p className="text-[#bb8506]">${price}</p> */}
+                    </div>
+                    {/* <p>$ {price}</p> */}
                 </div>
             </div>
         </div>

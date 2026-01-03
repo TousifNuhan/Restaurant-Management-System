@@ -13,14 +13,14 @@ const UpdateEmpDetails = () => {
     // const employee=useLoaderData()
     // console.log(employee)
     const { _id, name, Department, Employee_details, Phone, PhotoURL, Role, Salary, Shift } = useLoaderData()
-    console.log(Phone)
-    console.log(name)
+    // console.log(Phone)
+    // console.log(name)
     const { register, handleSubmit, reset } = useForm()
 
     const { mutateAsync } = useMutation({
         mutationFn: async (employeeUpdateDetails) => {
             const { data } = await axiosSecure.patch(`/addEmployee/${_id}`,employeeUpdateDetails)
-            console.log(data)
+            // console.log(data)
             return data
         },
         onSuccess: () => {
@@ -36,7 +36,7 @@ const UpdateEmpDetails = () => {
     })
 
     const onSubmit = (data) => {
-        console.log(data)
+        // console.log(data)
 
         const employeeUpdateDetails = {
             name: data?.name,
