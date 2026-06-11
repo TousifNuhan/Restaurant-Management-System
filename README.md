@@ -1,5 +1,8 @@
 Live Site URL: "https://restaurant-management-sy-3ba18.web.app/"
 
+## Server Side
+Link: https://github.com/TousifNuhan/Restaurant-Management-System-Server-
+
 ##  Five bullet points:
       - Integrated JWT
       - Implemented Tanstack query mutations 
